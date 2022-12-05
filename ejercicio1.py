@@ -44,7 +44,11 @@ if __name__=='__main__':
 if __name__=="__main__":
     main()
 		
-		
+#------------------------------
+#CASOS DE USO
+#-Si se acerca y se aleja rápido el imán funciona
+#-Algunas veces rebotan las patillas y se encienden cuando no deben
+#------------------------------
 		
 		
 		
