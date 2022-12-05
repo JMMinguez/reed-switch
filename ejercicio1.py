@@ -9,16 +9,42 @@
 import RPi.GPIO as GPIO
 import time
 
-GPIO.setmode(GPIO.BCM)
+
 #establecer pines
 PIN_SWITCH = 15
 LED_VERDE = 14
-	      
-#establecer saslidas y entradas
-GPIO.setup(PIN_SWITCH, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-GPIO.setup(LED_VERDE, GPIO.OUT)
+BOUNCETIME= 100
 
-while True:
-	input = GPIO.input(PIN_SWITCH)
-	print (input)
-	time.sleep(1)
+def callbackBotonPulsado (canal):
+    pulsado = False
+    
+    while True:
+        #Si el switch está activo
+        if not GPIO.input(PIN_SWITCH):
+            if not pulsado:
+                print("Puerta cerrada")
+                GPIO.output(LED_VERDE, GPIO.HIGH)
+                pulsado = True 
+        else:
+            pulsado = False
+            GPIO.output(LED_VERDE, GPIO.LOW)
+            continue
+
+
+if __name__=='__main__':
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(PIN_SWITCH, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+    GPIO.setup(LED_VERDE, GPIO.OUT)
+    GPIO.output(LED_VERDE, GPIO.LOW)
+    GPIO.add_event_detect(PIN_SWITCH, GPIO.FALLING,callback=callbackBotonPulsado, bouncetime = BOUNCETIME)
+	
+    while True:
+        time.sleep(0.1)
+		
+if __name__=="__main__":
+    main()
+		
+		
+		
+		
+		
