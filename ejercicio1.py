@@ -4,8 +4,8 @@
 #Fecha límite de entrega: 7/12/22
 #Objetivo: conocer el estado del interruptor en todo momento
 #------------------------------
-
 #!/usr/bin/python
+
 import RPi.GPIO as GPIO
 import time
 
@@ -17,7 +17,6 @@ BOUNCETIME= 100
 
 def callbackBotonPulsado (canal):
     pulsado = False
-    
     while True:
         #Si el switch está activo
         if not GPIO.input(PIN_SWITCH):
@@ -33,6 +32,7 @@ def callbackBotonPulsado (canal):
 
 if __name__=='__main__':
     GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
     GPIO.setup(PIN_SWITCH, GPIO.IN, pull_up_down = GPIO.PUD_UP)
     GPIO.setup(LED_VERDE, GPIO.OUT)
     GPIO.output(LED_VERDE, GPIO.LOW)
