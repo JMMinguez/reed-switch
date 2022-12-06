@@ -15,7 +15,7 @@ Componentes utilizados:
 
 El circuito se queda pues:
 
-AÑADIR FOTO CIRCUITO
+![circuito p6 sensores](https://github.com/rsanchez2021/Image/blob/main/p6_bb.png)
 
 ## Ejercicio
 
