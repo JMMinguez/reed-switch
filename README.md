@@ -5,7 +5,9 @@ El objetivo de esta práctica es unificar nuestros conocimientos ya aprendidos c
 
 ## Circuito y componentes
 Para crear el circuito se ha utilizado una resistencia en *pull up* para así poder utilizar un pin GPIO para comprobar el estado del interruptor. La organización **pull up** se basa en polarizar el voltaje de fuente, de esta forma cuando el pulsador esta abierto o en reposo, el voltaje en la entrada será de 5V. Cuando el pulsador es presionado, la corriente circula por la resistencia y luego por el pulsador, de esta forma tenemos que el voltaje en la entrada es de Tierra o 0V. Esto se 
-traduce en que cuando el pulsador está en reposo lee 1 y cuando "presionamos" leerá 0. Para más información os recomendamos esta [página web](https://naylampmechatronics.com/blog/39_resistencias-pull-up-y-pull-down.html) que nos ha servido para crear el circuito. 
+traduce en que cuando el pulsador está en reposo lee 1 y cuando "presionamos" leerá 0. Para más información os recomendamos esta [página web](https://naylampmechatronics.com/blog/39_resistencias-pull-up-y-pull-down.html) que nos ha servido para crear el circuito y de donde hemos sacado la siguiente foto explicativa:
+
+![Pull up](https://github.com/rsanchez2021/Image/blob/main/pull_up.PNG)
 
 Componentes utilizados:
 - Resistencia 10K Ω
@@ -15,7 +17,7 @@ Componentes utilizados:
 
 El circuito se queda pues:
 
-![circuito p6 sensores](https://github.com/rsanchez2021/Image/blob/main/p6_bb.png)
+![circuito p6 sensores](https://github.com/rsanchez2021/Image/blob/main/p6_bb_terminado.png)
 
 ## Ejercicio
 
